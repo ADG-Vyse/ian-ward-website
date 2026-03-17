@@ -14,17 +14,106 @@ import "normalize.css";
 	</head>
 	<body>
 		<header>
-			<a href="/"><span id="site-title">Ian Ward</span></a>
-			<nav>
-				<a href="/">Home</a>
-				<a href="/game-jams">Game Jams</a>
-				<a href="/about-me">About Me</a>
-				<a href="/resume">Resume</a>
-			</nav>
+			<div class="container">
+				<a href="/" id="page-title"><span>Ian Ward</span></a>
+				<nav>
+					<a href="/">Work</a>
+					<a href="/game-jams">Game Jams</a>
+					<a href="/about-me">About Me</a>
+					<a href="/resume">Resume</a>
+				</nav>
+				<div id="contact-links">
+					<!-- Contact Links - Email and Linkedin -->
+					<span>Linkedin</span>
+					<span>Email</span>
+				</div>
+			</div>
 		</header>
-		<slot />
-		<footer></footer>
+		<div class="container">
+			<slot />
+		</div>
+		<footer>
+			<div class="container"></div>
+		</footer>
 	</body>
 </html>
 
-<style></style>
+<style>
+	body {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr auto;
+		background-color: var(--color-black);
+		color: var(--color-gray-light);
+		font-family: var(--font-sans);
+	}
+
+	.container {
+		max-width: 1240px;
+		margin: 0 auto;
+		padding: 0 calc(var(--spacing) * 4);
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		padding: calc(var(--spacing) * 4);
+	}
+
+	header .container {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	#page-title {
+		font-size: var(--text-lg);
+		color: var(--color-white);
+		padding-left: 0;
+	}
+
+	nav {
+		display: flex;
+		gap: var(--spacing);
+	}
+
+	#contact-links {
+		display: flex;
+		gap: var(--spacing);
+	}
+</style>
+
+<style is:global>
+	:root {
+		--font-sans:
+			ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+			"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+		--font-mono:
+			ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+			"Liberation Mono", "Courier New", monospace;
+		--color-purple-light: oklch(71.4% 0.203 305.504);
+		--color-purple: oklch(62.7% 0.265 303.9);
+		--color-purple-dark: oklch(38.1% 0.176 304.987);
+		--color-purple-darker: oklch(29.1% 0.149 302.717);
+		--color-gray-lightest: oklch(96.7% 0.003 264.542);
+		--color-gray-light: oklch(70.7% 0.022 261.325);
+		--color-gray: oklch(55.1% 0.027 264.364);
+		--color-gray-darkest: oklch(13% 0.028 261.692);
+		--color-black: #000;
+		--color-white: #fff;
+		--spacing: 0.25rem;
+		--text-xs: 0.75rem;
+		--text-xs-line-height: calc(1 / 0.75);
+		--text-sm: 0.875rem;
+		--text-sm-line-height: calc(1.25 / 0.875);
+		--text-base: 1rem;
+		--text-base-line-height: calc(1.5 / 1);
+		--text-lg: 1.125rem;
+		--text-lg-line-height: calc(1.75 / 1.125);
+		--text-xl: 1.25rem;
+		--text-xl-line-height: calc(1.75 / 1.25);
+		--font-weight-normal: 400;
+		--font-weight-medium: 500;
+		--font-weight-semibold: 600;
+	}
+</style>
