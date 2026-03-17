@@ -1,0 +1,17 @@
+---
+const { vertical = false } = Astro.props;
+---
+
+<nav style={{ flexDirection: vertical ? "column" : "row" }}>
+	<a href="/">Work</a>
+	<a href="/game-jams">Game Jams</a>
+	<a href="/about-me">About Me</a>
+	<a href="/resume">Resume</a>
+</nav>
+
+<style>
+	nav {
+		display: flex;
+		gap: var(--spacing);
+	}
+</style>
