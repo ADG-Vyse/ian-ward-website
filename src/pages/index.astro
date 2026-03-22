@@ -6,69 +6,67 @@ import "../styles/global.css";
 ---
 
 <Layout>
-	<Gradient color="purple" opacity={10}>
-		<div class="container" id="home">
-			<section>
-				<h1>Crafting Immersive Gaming Experiences</h1>
-				<div id="expertise">
-					<span class="badge">GAME DESIGNER</span>
-					<span class="badge">LEVEL DESIGNER</span>
-					<span class="badge">QUALITY ASSURANCE</span>
-				</div>
-				<p>
-					I’m an aspiring game designer currently looking to start my
-					career in the games industry. I have a degree (Hons)
-					Computer Games (Design) (BCGD).
-				</p>
-			</section>
-
-			<section>
-				<h2>Featured Projects</h2>
-				<p>
-					A collection of game design projects showcasing my expertise
-					in various genres and gameplay mechanics.
-				</p>
-
-				<div class="projects">
-					<ProjectCard
-						title="Project Title"
-						description="Project Description"
-						image="src/images/placeholder.jpg"
-						alt="Project Image"
-						role="Game Designer"
-						tags={["Tag1", "Tag2"]}
-						link="/project-link"
-					/>
-					<ProjectCard
-						title="Project Title"
-						description="Project Description"
-						image="src/images/placeholder.jpg"
-						alt="Project Image"
-						role="Game Designer"
-						tags={["Tag1", "Tag2"]}
-						link="/project-link"
-					/>
-					<ProjectCard
-						title="Project Title"
-						description="Project Description"
-						image="src/images/placeholder.jpg"
-						alt="Project Image"
-						role="Game Designer"
-						tags={["Tag1", "Tag2"]}
-						link="/project-link"
-					/>
-					<ProjectCard
-						title="Project Title"
-						description="Project Description"
-						image="src/images/placeholder.jpg"
-						alt="Project Image"
-						role="Game Designer"
-						tags={["Tag1", "Tag2"]}
-						link="/project-link"
-					/>
-				</div>
-			</section>
+	<section class="container">
+		<h1>Crafting Immersive Gaming Experiences</h1>
+		<div id="expertise">
+			<span class="badge">GAME DESIGNER</span>
+			<span class="badge">LEVEL DESIGNER</span>
+			<span class="badge">QUALITY ASSURANCE</span>
 		</div>
+		<p>
+			I’m an aspiring game designer currently looking to start my career
+			in the games industry. I have a degree (Hons) Computer Games
+			(Design) (BCGD).
+		</p>
+	</section>
+
+	<Gradient color="purple" opacity={10}>
+		<section class="container">
+			<h2>Featured Projects</h2>
+			<p>
+				A collection of game design projects showcasing my expertise in
+				various genres and gameplay mechanics.
+			</p>
+
+			<div class="projects">
+				<ProjectCard
+					title="Project Title"
+					description="Project Description"
+					image="src/images/placeholder.jpg"
+					alt="Project Image"
+					role="Game Designer"
+					tags={["Tag1", "Tag2"]}
+					link="/project-link"
+				/>
+				<ProjectCard
+					title="Project Title"
+					description="Project Description"
+					image="src/images/placeholder.jpg"
+					alt="Project Image"
+					role="Game Designer"
+					tags={["Tag1", "Tag2"]}
+					link="/project-link"
+				/>
+				<ProjectCard
+					title="Project Title"
+					description="Project Description"
+					image="src/images/placeholder.jpg"
+					alt="Project Image"
+					role="Game Designer"
+					tags={["Tag1", "Tag2"]}
+					link="/project-link"
+				/>
+				<ProjectCard
+					title="Project Title"
+					description="Project Description"
+					image="src/images/placeholder.jpg"
+					alt="Project Image"
+					role="Game Designer"
+					tags={["Tag1", "Tag2"]}
+					link="/project-link"
+				/>
+			</div>
+		</section>
 	</Gradient>
 </Layout>
 
