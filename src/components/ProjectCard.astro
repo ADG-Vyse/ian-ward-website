@@ -1,0 +1,79 @@
+---
+import "../styles/global.css";
+import { GrGamepad } from "react-icons/gr";
+
+interface Props {
+	title: string;
+	description: string;
+	image: string;
+	alt: string;
+	role: string;
+	tags: string[];
+	link: string;
+}
+
+const { title, description, image, alt, role, tags, link } =
+	Astro.props as Props;
+---
+
+<div class="accented_border card">
+	<a href={link} class="project-card">
+		<div class="image_container">
+			<img src={image} alt={alt} />
+		</div>
+		<div class="content">
+			<h3>{title}</h3>
+			<p>{description}</p>
+			<span class="role"><GrGamepad /> {role}</span>
+			<div class="tags">
+				{tags.map((tag) => <span class="badge">{tag}</span>)}
+			</div>
+		</div>
+	</a>
+</div>
+
+<style>
+	.card {
+		border-radius: 0.75rem;
+		overflow: hidden;
+		background-color: rgb(14 17 22 / 0.3);
+	}
+
+	.image_container {
+		overflow: hidden;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		transition-duration: 0.4s;
+		transition-property: transform;
+	}
+
+	img:hover {
+		transform: scale(1.25);
+	}
+
+	.content {
+		padding: 1.5rem;
+	}
+
+	h3 {
+		color: white;
+		font-weight: normal;
+		margin-top: 0;
+	}
+
+	.role {
+		display: inline-flex;
+		gap: 0.75rem;
+		align-items: center;
+		color: hsl(from white h s calc(l * 0.5));
+	}
+
+	.tags {
+		display: flex;
+		gap: 0.5rem;
+		margin-top: 0.75rem;
+	}
+</style>
