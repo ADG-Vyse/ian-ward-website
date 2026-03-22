@@ -1,0 +1,22 @@
+---
+interface Props {
+	color: string;
+	opacity?: number;
+}
+const { color, opacity = 10 } = Astro.props;
+---
+
+<div style={`--color: ${color}; --opacity: ${opacity}%`}>
+	<slot />
+</div>
+
+<style>
+	div {
+		background: linear-gradient(
+			to bottom,
+			transparent,
+			color-mix(in srgb, var(--color) var(--opacity), transparent) 50%,
+			transparent
+		);
+	}
+</style>
