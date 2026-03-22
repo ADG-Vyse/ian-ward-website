@@ -1,15 +1,110 @@
 ---
+import Gradient from "../components/Gradient.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 ---
 
 <Layout>
-	<section>
-		<h1>Ian Ward</h1>
-		<h2>Game / Level Design</h2>
-		<h2>QA</h2>
-		<p>
-			I’m an aspiring game designer currently looking to start my career in the
-			games industry. I have a degree (Hons) Computer Games (Design) (BCGD).
-		</p>
-	</section>
+	<Gradient color="purple" opacity={10}>
+		<div class="container" id="home">
+			<section>
+				<h1>Crafting Immersive Gaming Experiences</h1>
+				<div id="expertise">
+					<span class="badge">GAME DESIGNER</span>
+					<span class="badge">LEVEL DESIGNER</span>
+					<span class="badge">QUALITY ASSURANCE</span>
+				</div>
+				<p>
+					I’m an aspiring game designer currently looking to start my
+					career in the games industry. I have a degree (Hons)
+					Computer Games (Design) (BCGD).
+				</p>
+			</section>
+
+			<section>
+				<h2>Featured Projects</h2>
+				<p>
+					A collection of game design projects showcasing my expertise
+					in various genres and gameplay mechanics.
+				</p>
+
+				<div class="projects">
+					<ProjectCard
+						title="Project Title"
+						description="Project Description"
+						image="src/images/placeholder.jpg"
+						alt="Project Image"
+						role="Game Designer"
+						tags={["Tag1", "Tag2"]}
+						link="/project-link"
+					/>
+					<ProjectCard
+						title="Project Title"
+						description="Project Description"
+						image="src/images/placeholder.jpg"
+						alt="Project Image"
+						role="Game Designer"
+						tags={["Tag1", "Tag2"]}
+						link="/project-link"
+					/>
+					<ProjectCard
+						title="Project Title"
+						description="Project Description"
+						image="src/images/placeholder.jpg"
+						alt="Project Image"
+						role="Game Designer"
+						tags={["Tag1", "Tag2"]}
+						link="/project-link"
+					/>
+					<ProjectCard
+						title="Project Title"
+						description="Project Description"
+						image="src/images/placeholder.jpg"
+						alt="Project Image"
+						role="Game Designer"
+						tags={["Tag1", "Tag2"]}
+						link="/project-link"
+					/>
+				</div>
+			</section>
+		</div>
+	</Gradient>
 </Layout>
+
+<style>
+	h1 {
+		color: white;
+		text-align: center;
+		font-size: clamp(2.1rem, 4vw, 2.5rem);
+		margin-bottom: 2rem;
+	}
+
+	#expertise {
+		display: flex;
+		gap: 0.75rem;
+		margin: 1.25rem 0;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: 0 auto;
+	}
+
+	p {
+		text-align: center;
+		text-wrap: balance;
+		margin: 2rem 0;
+	}
+
+	h2 {
+		color: white;
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.projects {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		gap: 1.5rem;
+	}
+</style>
