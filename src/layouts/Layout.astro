@@ -23,22 +23,43 @@ import ContactLinks from "../components/ContactLinks.astro";
 				<ContactLinks />
 			</div>
 		</header>
-
-		<slot />
+		<div>
+			<slot />
+		</div>
 
 		<footer>
-			<div class="container">
-				<span>Ian Ward</span>
+			<div class="container footer-content">
+				<div>
+					<span>Ian Ward</span>
+					<p>
+						Game Designer specializing in creating immersive
+						gameplay experiences.
+					</p>
+				</div>
+				<div>
+					<span>Navigation</span>
+					<NavLinks footer={true} />
+				</div>
+				<div>
+					<span>Contact Me</span>
+					<ContactLinks footer={true} />
+				</div>
 			</div>
+			<span class="container copyright">
+				&copy; {new Date().getFullYear()} Ian Ward. All rights reserved.
+				<br />
+			</span>
 		</footer>
 	</body>
 </html>
 
 <style>
 	html {
-		overflow: scroll;
+		overflow-y: scroll;
 	}
 	body {
+		display: grid;
+		min-height: 100dvh;
 		grid-template-columns: 1fr;
 		grid-template-rows: auto 1fr auto;
 		background-color: black;
@@ -52,18 +73,44 @@ import ContactLinks from "../components/ContactLinks.astro";
 		margin-bottom: 1rem;
 	}
 
-	footer {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		padding: 1rem 0;
-		border-top: 1px solid hsl(from white h s calc(l * 0.1));
-		margin-top: 1.5rem;
-	}
-
 	#navbar {
 		display: grid;
 		grid-template-columns: 1fr 4fr 1fr;
 		align-items: center;
+	}
+
+	#page-title {
+		color: white;
+		padding: 0.75rem 0.5rem;
+	}
+
+	footer {
+		border-top: 1px solid hsl(from white h s calc(l * 0.1));
+	}
+
+	footer p {
+		margin: 0;
+	}
+
+	.footer-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		padding: 2rem 0;
+		gap: 2rem;
+	}
+
+	.footer-content span {
+		color: white;
+	}
+
+	.footer-content p {
+		text-wrap: balance;
+	}
+
+	.footer-content > div {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
 	}
 
 	@media (max-width: 650px) {
@@ -71,9 +118,18 @@ import ContactLinks from "../components/ContactLinks.astro";
 			grid-template-columns: 1fr 1fr;
 			gap: 0.75rem;
 		}
+
+		.footer-content {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, auto);
+			text-align: center;
+		}
 	}
-	#page-title {
-		color: white;
-		padding: 0.75rem 0.5rem;
+
+	.copyright {
+		display: block;
+		border-top: 1px solid hsl(from white h s calc(l * 0.1));
+		text-align: center;
+		padding: 1.5rem 0;
 	}
 </style>
