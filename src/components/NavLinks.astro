@@ -10,24 +10,8 @@ const links = [
 ];
 ---
 
-<nav
-	style={{
-		textAlign: footer ? "left" : "center",
-		justifyContent: footer ? "start" : "center",
-	}}
->
-	{
-		links.map((link) => (
-			<a
-				href={link.href}
-				style={{
-					padding: footer ? "0.25rem 0" : "0.75rem 0.5rem",
-				}}
-			>
-				{link.name}
-			</a>
-		))
-	}
+<nav class:list={[{ footer }]}>
+	{links.map((link) => <a href={link.href}>{link.name}</a>)}
 </nav>
 
 <style>
@@ -35,14 +19,25 @@ const links = [
 		display: flex;
 		gap: 1.5rem;
 		flex-direction: row;
+		justify-content: center;
+	}
+
+	nav.footer {
+		flex-direction: column;
+		gap: 0;
+		justify-content: start;
+		text-align: left;
 	}
 
 	a {
 		padding: 0.75rem 0.5rem;
-
 		color: var(--text-color);
 		transition-duration: 100ms;
 		transition-property: color;
+	}
+
+	.footer a {
+		padding: 0.25rem 0;
 	}
 
 	a:hover {
@@ -52,7 +47,10 @@ const links = [
 	@media (max-width: 650px) {
 		nav {
 			display: none;
-			gap: 0.5rem;
+		}
+		nav.footer {
+			display: flex;
+			text-align: center;
 		}
 	}
 </style>
