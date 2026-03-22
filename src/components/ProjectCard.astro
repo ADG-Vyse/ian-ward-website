@@ -16,8 +16,8 @@ const { title, description, image, alt, role, tags, link } =
 	Astro.props as Props;
 ---
 
-<a href={link} class="accented_border card">
-	<div class="image_container">
+<a href={link} class="accented-border card">
+	<div class="image-container">
 		<img src={image} alt={alt} />
 	</div>
 	<div class="content">
@@ -43,7 +43,7 @@ const { title, description, image, alt, role, tags, link } =
 		height: 30rem;
 	}
 
-	.image_container {
+	.image-container {
 		overflow: hidden;
 		height: 100%;
 	}
