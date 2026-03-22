@@ -17,7 +17,7 @@ const links = [
 <style>
 	nav {
 		display: flex;
-		gap: 1.5rem;
+		gap: min(1rem, 1vw);
 		flex-direction: row;
 		justify-content: center;
 	}
@@ -44,7 +44,7 @@ const links = [
 		color: white;
 	}
 
-	@media (max-width: 650px) {
+	@media (max-width: 750px) {
 		nav {
 			display: none;
 		}
