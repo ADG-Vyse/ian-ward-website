@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { GrGamepad } from "react-icons/gr";
+import { FiUser } from "react-icons/fi";
 
 interface Props {
 	title: string;
@@ -16,21 +16,19 @@ const { title, description, image, alt, role, tags, link } =
 	Astro.props as Props;
 ---
 
-<div class="accented_border card">
-	<a href={link} class="project-card">
-		<div class="image_container">
-			<img src={image} alt={alt} />
+<a href={link} class="accented_border card">
+	<div class="image_container">
+		<img src={image} alt={alt} />
+	</div>
+	<div class="content">
+		<h3>{title}</h3>
+		<p>{description}</p>
+		<span class="role"><FiUser /> {role}</span>
+		<div class="tags">
+			{tags.map((tag) => <span class="badge">{tag}</span>)}
 		</div>
-		<div class="content">
-			<h3>{title}</h3>
-			<p>{description}</p>
-			<span class="role"><GrGamepad /> {role}</span>
-			<div class="tags">
-				{tags.map((tag) => <span class="badge">{tag}</span>)}
-			</div>
-		</div>
-	</a>
-</div>
+	</div>
+</a>
 
 <style>
 	.card {
@@ -39,13 +37,22 @@ const { title, description, image, alt, role, tags, link } =
 		background-color: rgb(14 17 22 / 0.3);
 	}
 
+	a {
+		display: grid;
+		grid-template-rows: minmax(0, 50%) 1fr;
+		height: 30rem;
+	}
+
 	.image_container {
 		overflow: hidden;
+		height: 100%;
 	}
 
 	img {
 		width: 100%;
-		height: auto;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
 		transition-duration: 0.4s;
 		transition-property: transform;
 	}
@@ -56,15 +63,18 @@ const { title, description, image, alt, role, tags, link } =
 
 	.content {
 		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
 	}
 
 	h3 {
 		color: white;
 		font-weight: normal;
-		margin-top: 0;
+		margin: 0;
 	}
 
 	.role {
+		margin-top: auto;
 		display: inline-flex;
 		gap: 0.75rem;
 		align-items: center;
