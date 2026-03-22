@@ -1,0 +1,55 @@
+---
+import "../styles/global.css";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa6";
+---
+
+<div>
+	<a
+		href="https://www.linkedin.com/in/ian-ward-567594177/"
+		class="accented_border"
+	>
+		<FaLinkedinIn />
+		<span>Linkedin</span>
+	</a>
+	<a href="mailto:IanWard1991@hotmail.co.uk" class="accented_border">
+		<FaEnvelope />
+		<span>Email</span>
+	</a>
+</div>
+
+<style>
+	div {
+		display: flex;
+		justify-content: end;
+		gap: 0.5rem;
+
+		user-select: none;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+
+		padding: 0.75rem 0.75rem;
+		border-radius: 0.75rem;
+
+		color: var(--text-color);
+		background-color: hsl(from white h s calc(l * 0.05));
+
+		transition-duration: 0.4s;
+		transition-property: color, background-color;
+	}
+
+	a:hover {
+		color: white;
+		background-color: hsl(from white h s calc(l * 0.1));
+	}
+
+	@media (max-width: 800px) {
+		span {
+			display: none;
+		}
+	}
+</style>
