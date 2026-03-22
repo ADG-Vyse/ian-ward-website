@@ -1,21 +1,40 @@
 ---
 import "../styles/global.css";
-const { vertical = false } = Astro.props;
+const { footer = false } = Astro.props;
+
+const links = [
+	{ name: "Work", href: "/" },
+	{ name: "Game Jams", href: "/game-jams" },
+	{ name: "About Me", href: "/about-me" },
+	{ name: "Resume", href: "/resume" },
+];
 ---
 
-<nav style={{ flexDirection: vertical ? "column" : "row" }}>
-	<a href="/">Work</a>
-	<a href="/game-jams">Game Jams</a>
-	<a href="/about-me">About Me</a>
-	<a href="/resume">Resume</a>
+<nav
+	style={{
+		textAlign: footer ? "left" : "center",
+		justifyContent: footer ? "start" : "center",
+	}}
+>
+	{
+		links.map((link) => (
+			<a
+				href={link.href}
+				style={{
+					padding: footer ? "0.25rem 0" : "0.75rem 0.5rem",
+				}}
+			>
+				{link.name}
+			</a>
+		))
+	}
 </nav>
 
 <style>
 	nav {
 		display: flex;
-		text-align: center;
-		justify-content: center;
-		gap: 1rem;
+		gap: 1.5rem;
+		flex-direction: row;
 	}
 
 	a {
