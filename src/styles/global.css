@@ -1,0 +1,40 @@
+:root {
+	--font-sans:
+		ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+	--font-mono:
+		ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
+
+	--accent-color: hsl(273, 100%, 64%);
+	--text-color: hsl(0, 0%, 50%);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.badge {
+	color: hsl(from var(--accent-color) h s calc(l * 1.2));
+	background: hsl(from var(--accent-color) h s calc(l * 0.15));
+	border: 1px solid hsl(from var(--accent-color) h s calc(l * 0.6));
+	border-radius: 9999px;
+	padding: 0.5rem 1rem;
+	user-select: none;
+}
+
+.accented_border {
+	border: 1px solid hsl(from white h s calc(l * 0.2));
+	transition: border-color 0.4s ease;
+}
+
+.accented_border:hover {
+	border-color: var(--accent-color);
+}
+
+.container {
+	width: min(90%, 1200px);
+	margin: 0 auto;
+}
