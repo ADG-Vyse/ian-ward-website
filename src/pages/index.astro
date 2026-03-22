@@ -6,21 +6,24 @@ import "../styles/global.css";
 ---
 
 <Layout>
-	<section class="container">
-		<h1>Crafting Immersive Gaming Experiences</h1>
-		<div id="expertise">
-			<span class="badge">GAME DESIGNER</span>
-			<span class="badge">LEVEL DESIGNER</span>
-			<span class="badge">QUALITY ASSURANCE</span>
-		</div>
-		<p>
-			I’m an aspiring game designer currently looking to start my career
-			in the games industry. I have a degree (Hons) Computer Games
-			(Design) (BCGD).
-		</p>
-	</section>
+	<Gradient color="purple" opacity={5}>
+		<section class="container">
+			<h1>Crafting Immersive Gaming Experiences</h1>
+			<div id="expertise">
+				<span class="badge">GAME DESIGNER</span>
+				<span class="badge">LEVEL DESIGNER</span>
+				<span class="badge">QUALITY ASSURANCE</span>
+			</div>
 
-	<Gradient color="purple" opacity={10}>
+			<p>
+				I’m an aspiring game designer currently looking to start my
+				career in the games industry. I have a degree (Hons) Computer
+				Games (Design) (BCGD).
+			</p>
+		</section>
+	</Gradient>
+
+	<Gradient color="blue" opacity={5}>
 		<section class="container">
 			<h2>Featured Projects</h2>
 			<p>
@@ -30,13 +33,13 @@ import "../styles/global.css";
 
 			<div class="projects">
 				<ProjectCard
-					title="Project Title"
-					description="Project Description"
-					image="src/images/placeholder.jpg"
+					title="Iskandar The Spear of Truth"
+					description="A top-down action adventure game inspired by the Legend of Zelda series. Embark on a quest to rescue your kidnapped mother and uncover the truth behind her disappearance."
+					image="src/images/iskandar/iskandar-throne-room.webp"
 					alt="Project Image"
-					role="Game Designer"
+					role="Lead Game Designer"
 					tags={["Tag1", "Tag2"]}
-					link="/project-link"
+					link="/work/iskandar-the-spear-of-truth"
 				/>
 				<ProjectCard
 					title="Project Title"
@@ -102,7 +105,7 @@ import "../styles/global.css";
 
 	.projects {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
 		gap: 1.5rem;
 	}
 </style>
