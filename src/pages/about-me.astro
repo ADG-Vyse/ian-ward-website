@@ -2,13 +2,14 @@
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/global.css";
 import ianGaming from "../images/ian-gaming.jpg";
+import { Image } from "astro:assets";
 ---
 
 <Layout>
 	<div class="container">
 		<div class="profile">
-			<img
-				src={ianGaming.src}
+			<Image
+				src={ianGaming}
 				alt="Picture of Ian Ward taking part in a fighting game tournament"
 				class="profile-picture"
 			/>
@@ -33,15 +34,15 @@ import ianGaming from "../images/ian-gaming.jpg";
 <style>
 	.profile {
 		display: grid;
-		grid-template-columns: auto 1fr;
+		grid-template-columns: auto auto;
 		align-items: center;
-		gap: 10rem;
+		gap: min(5rem, 5vw);
 	}
 
 	img {
-		width: 100%;
+		width: min(100%, 40vw);
 		border-radius: 50000px;
-		max-width: 500px;
+		height: auto;
 	}
 
 	p {
@@ -56,8 +57,12 @@ import ianGaming from "../images/ian-gaming.jpg";
 	}
 
 	@media (max-width: 750px) {
-		.container {
-			flex-direction: column;
+		.profile {
+			grid-template-columns: 1fr;
+		}
+		img {
+			width: 80%;
+			margin: 0 auto;
 		}
 	}
 </style>
