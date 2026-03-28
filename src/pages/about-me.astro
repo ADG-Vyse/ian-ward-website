@@ -1,9 +1,62 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import "@/styles/global.css";
 ---
 
 <Layout>
 	<div class="container">
-		<h1>About Me</h1>
+		<div class="profile">
+			<img
+				src="src/images/ian-gaming.jpg"
+				alt="Picture of Ian Ward taking part in a fighting game tournament"
+				class="profile-picture"
+			/>
+			<p>
+				Hi, I’m Ian, and I’m an aspiring game designer with a passion
+				for creating compelling mechanics and experiences, inspired by
+				the retro games I grew up playing. Currently looking to
+				kickstart my career in the gaming industry, I’m eager to bring
+				my creativity, attention to detail, and love for gameplay design
+				to an entry-level position. Whether it’s brainstorming
+				innovative systems or diving into QA testing to ensure polished,
+				bug-free gameplay, I’m committed to growing as a designer and
+				contributing to every project I work on.
+				<br />
+				I have a degree in game design (Hons) Computer Games (Design) (BCGD.
+				I have experience using both the Unity Engine and Unreal Engine(BP).
+			</p>
+		</div>
 	</div>
 </Layout>
+
+<style>
+	.profile {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: center;
+		gap: 10rem;
+	}
+
+	img {
+		width: 100%;
+		border-radius: 50000px;
+		max-width: 500px;
+	}
+
+	p {
+		color: white;
+		text-wrap: balance;
+		font-size: large;
+		line-height: 1.5rem;
+	}
+
+	br {
+		margin-bottom: 1.5rem;
+	}
+
+	@media (max-width: 750px) {
+		.container {
+			flex-direction: column;
+		}
+	}
+</style>
