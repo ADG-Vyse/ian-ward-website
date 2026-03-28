@@ -4,14 +4,37 @@ const { footer = false } = Astro.props;
 
 const links = [
 	{ name: "Work", href: "/" },
-	{ name: "Game Jams", href: "/game-jams" },
-	{ name: "About Me", href: "/about-me" },
-	{ name: "Resume", href: "/resume" },
+	{ name: "Game Jams", href: "/game-jams/" },
+	{ name: "About Me", href: "/about-me/" },
+	{ name: "Resume", href: "/resume/" },
 ];
+
+const currentPath = Astro.url.pathname;
+
+function isLinkHighlighted(href: string) {
+	if (currentPath === href) {
+		return true;
+	}
+
+	if (currentPath.includes("work") && href === "/") {
+		return true;
+	}
+
+	return false;
+}
 ---
 
 <nav class:list={[{ footer }]}>
-	{links.map((link) => <a href={link.href}>{link.name}</a>)}
+	{
+		links.map((link) => (
+			<a
+				href={link.href}
+				class={isLinkHighlighted(link.href) ? "current-page" : ""}
+			>
+				{link.name}
+			</a>
+		))
+	}
 </nav>
 
 <style>
@@ -41,6 +64,10 @@ const links = [
 	}
 
 	a:hover {
+		color: white;
+	}
+
+	.current-page {
 		color: white;
 	}
 
