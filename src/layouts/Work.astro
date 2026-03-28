@@ -1,0 +1,13 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/global.css";
+
+const { title } = Astro.props as { title: string };
+---
+
+<Layout>
+	<div class="container">
+		<h1>{title}</h1>
+		<slot />
+	</div>
+</Layout>
