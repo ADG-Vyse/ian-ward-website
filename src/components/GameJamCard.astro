@@ -1,0 +1,72 @@
+---
+const {
+	title,
+	imageSrc,
+	imageAlt,
+	gameJam,
+	members,
+	deadline,
+	description,
+	technology,
+	link,
+	linkText,
+} = Astro.props as {
+	title: string;
+	imageSrc: string;
+	imageAlt: string;
+	gameJam: string;
+	members: string;
+	deadline: string;
+	description: string;
+	technology: string;
+	link: string;
+	linkText: string;
+};
+---
+
+<a class="card accented-border" href={link}>
+	<img src={imageSrc} alt={imageAlt} />
+	<div class="content">
+		<h2>{title}</h2>
+		<span>{gameJam} | {members} | {deadline}</span>
+		<p>{description}</p>
+		<p>Engine: {technology}</p>
+		<p>{linkText}</p>
+	</div>
+</a>
+
+<style>
+	.card {
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+		border-radius: 0.75rem;
+		overflow: hidden;
+	}
+
+	.content {
+		padding: max(1.5rem, 2%);
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	h2 {
+		color: white;
+		margin: 0;
+		margin-bottom: 0.5rem;
+	}
+
+	p {
+		margin: 1rem 0;
+	}
+
+	@media (max-width: 1000px) {
+		.card {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
