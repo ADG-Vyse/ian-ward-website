@@ -1,11 +1,12 @@
 ---
 import "@/styles/global.css";
+import { Image } from "astro:assets";
 import { FiUser } from "react-icons/fi";
 
 interface Props {
 	title: string;
 	description: string;
-	image: string;
+	image: ImageMetadata;
 	alt: string;
 	role: string;
 	tags: string[];
@@ -18,7 +19,7 @@ const { title, description, image, alt, role, tags, link } =
 
 <a href={link} class="accented-border card">
 	<div class="image-container">
-		<img src={image} alt={alt} />
+		<Image src={image} alt={alt} />
 	</div>
 	<div class="content">
 		<h3>{title}</h3>
@@ -53,12 +54,6 @@ const { title, description, image, alt, role, tags, link } =
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
-		transition-duration: 0.4s;
-		transition-property: transform;
-	}
-
-	img:hover {
-		transform: scale(1.1);
 	}
 
 	.content {

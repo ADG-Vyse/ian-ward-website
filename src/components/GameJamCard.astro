@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
+
 const {
 	title,
-	imageSrc,
+	image,
 	imageAlt,
 	gameJam,
 	members,
@@ -12,7 +14,7 @@ const {
 	linkText,
 } = Astro.props as {
 	title: string;
-	imageSrc: string;
+	image: ImageMetadata;
 	imageAlt: string;
 	gameJam: string;
 	members: string;
@@ -25,7 +27,7 @@ const {
 ---
 
 <a class="card accented-border" href={link}>
-	<img src={imageSrc} alt={imageAlt} />
+	<Image src={image} alt={imageAlt} />
 	<div class="content">
 		<h2>{title}</h2>
 		<span>{gameJam} | {members} | {deadline}</span>
