@@ -2,6 +2,8 @@
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/global.css";
 import GameJamCard from "@/components/GameJamCard.astro";
+import jellyExperiment from "../images/game-jams/jelly-experiment.gif";
+import dustDeparture4 from "../images/dust-and-departure/dust-and-departure-4.webp";
 ---
 
 <Layout>
@@ -9,7 +11,7 @@ import GameJamCard from "@/components/GameJamCard.astro";
 		<div class="jam-list">
 			<GameJamCard
 				title="Jelly Experiment"
-				imageSrc="/src/images/game-jams/jelly-experiment.gif"
+				imageSrc={jellyExperiment.src}
 				imageAlt="A gif of the game 'Jelly Experiment' showing a jelly character moving around a platformer level."
 				gameJam="Solent Game Jam 2023"
 				members="5 Members"
@@ -22,7 +24,7 @@ import GameJamCard from "@/components/GameJamCard.astro";
 
 			<GameJamCard
 				title="Dust and Departure"
-				imageSrc="/src/images/dust-and-departure/dust-and-departure-4.webp"
+				imageSrc={dustDeparture4.src}
 				imageAlt="A screenshot of the game 'Dust and Departure' showing a tree covered landscape with a giant planet in the sky, as well as a windmil slightly off in the distance."
 				gameJam="Global Game Jam 2025"
 				members="9 Members"
