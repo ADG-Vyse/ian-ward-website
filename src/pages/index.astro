@@ -4,6 +4,8 @@ import Layout from "@/layouts/Layout.astro";
 import ProjectCard from "@/components/project-card.astro";
 import "@/styles/global.css";
 import { projects } from "@/data/projects";
+import { skillsAndExpertise } from "@/data/profile";
+import SkillCategory from "@/components/skills-section.astro";
 ---
 
 <Layout>
@@ -17,9 +19,8 @@ import { projects } from "@/data/projects";
 			</div>
 
 			<p>
-				I’m an aspiring game designer currently looking to start my
-				career in the games industry. I have a degree (Hons) Computer
-				Games (Design) (BCGD).
+				I’m an aspiring game designer currently looking to start my career in the games industry. I
+				have a degree (Hons) Computer Games (Design) (BCGD).
 			</p>
 		</section>
 	</Gradient>
@@ -28,25 +29,39 @@ import { projects } from "@/data/projects";
 		<section class="container">
 			<h2>Featured Projects</h2>
 			<p>
-				A collection of game design projects showcasing my expertise in
-				various genres and gameplay mechanics.
+				A collection of game design projects showcasing my expertise in various genres and gameplay
+				mechanics.
 			</p>
 
 			<div class="projects">
-				{projects.map((project) => (
-					<ProjectCard
-						title={project.title}
-						description={project.shortDescription}
-						image={project.thumbnailImage}
-						alt={project.thumbnailAltText}
-						role={project.role}
-						tags={project.tags}
-						link={`/project/${project.internalProjectLink}/`}
-					/>
-				))}
+				{
+					projects.map(project => (
+						<ProjectCard
+							title={project.title}
+							description={project.shortDescription}
+							image={project.thumbnailImage}
+							alt={project.thumbnailAltText}
+							role={project.role}
+							tags={project.tags}
+							link={`/project/${project.internalProjectLink}/`}
+						/>
+					))
+				}
 			</div>
 		</section>
 	</Gradient>
+
+	<div class="container">
+		<h1>Skills and Expertise</h1>
+		<p>A comprehensive skill set covering all aspects of game development and design</p>
+		<div id="skills-and-expertise">
+			{
+				skillsAndExpertise.map(skillCategory => (
+					<SkillCategory skillCategory={skillCategory} />
+				))
+			}
+		</div>
+	</div>
 </Layout>
 
 <style>
@@ -64,6 +79,18 @@ import { projects } from "@/data/projects";
 		justify-content: center;
 		flex-wrap: wrap;
 		margin: 0 auto;
+	}
+
+	#skills-and-expertise {
+		display:grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 2rem;
+	}
+
+	@media (max-width: 750px) {
+		#skills-and-expertise {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	p {
