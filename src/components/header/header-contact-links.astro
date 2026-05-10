@@ -5,7 +5,8 @@ import { contactLinks } from "@/data/links";
 ---
 
 <div class="header-contact-links">
-	{contactLinks.map(({ href, Icon, name }) => <ContactLink href={href} name={name} Icon={Icon} />)}
+	{contactLinks.map(({ href, Icon, name }) =>
+	<ContactLink href={href} name={name} Icon={Icon} />)}
 </div>
 
 <style>
