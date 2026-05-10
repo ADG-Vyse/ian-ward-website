@@ -50,6 +50,16 @@ const dialogId = `gallery-dialog-${crypto.randomUUID()}`;
 		border: none;
 		max-width: 90vw;
 		max-height: 90vh;
+		opacity: 1;
+		transform: scale(1);
+		transition: opacity 0.2s ease, transform 0.2s ease, display 0.2s ease allow-discrete, overlay 0.2s ease allow-discrete;
+	}
+
+	@starting-style {
+		dialog[open] {
+			opacity: 0;
+			transform: scale(0.9);
+		}
 	}
 
 	dialog img {
@@ -62,5 +72,13 @@ const dialogId = `gallery-dialog-${crypto.randomUUID()}`;
 	dialog::backdrop {
 		background-color: rgb(0 0 0 / 0.85);
 		cursor: pointer;
+		opacity: 1;
+		transition: opacity 0.2s ease, display 0.2s ease allow-discrete, overlay 0.2s ease allow-discrete;
+	}
+
+	@starting-style {
+		dialog[open]::backdrop {
+			opacity: 0;
+		}
 	}
 </style>
