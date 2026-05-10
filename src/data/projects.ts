@@ -106,7 +106,7 @@ export const projects: Project[] = [
         },
       ],
       galleryImages: [iskandarBossRoom, iskandarCampfire, iskandarCourtyard, iskandarEnemyCamp],
-      galleryColumns: 3,
+      galleryColumns: 2,
     },
   },
   {
