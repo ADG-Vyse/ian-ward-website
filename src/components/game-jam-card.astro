@@ -33,7 +33,7 @@ const {
 		<span>{gameJam} | {members} | {deadline}</span>
 		<p>{description}</p>
 		<p>Engine: {technology}</p>
-		<p>{linkText}</p>
+		<p id="link-text">{linkText}</p>
 	</div>
 </a>
 
@@ -64,6 +64,11 @@ const {
 
 	p {
 		margin: 1rem 0;
+	}
+
+	#link-text {
+		margin-top: auto;
+		color: white;
 	}
 
 	@media (max-width: 1000px) {
