@@ -1,0 +1,71 @@
+---
+import type { SkillCategory } from "@/data/profile";
+import "@/styles/global.css";
+
+interface SkillCategoryProps {
+	skillCategory: SkillCategory;
+}
+
+const { skillCategory } = Astro.props as SkillCategoryProps;
+const Icon = skillCategory.icon;
+---
+
+<section class="skill-category accented-border">
+	<div id="title-container">
+		<div id="icon-container">
+			<Icon size={20}/>
+		</div>
+		<h2>{skillCategory.title}</h2>
+	</div>
+	<ul>
+		{skillCategory.items.map(skill => <li>{skill}</li>)}
+	</ul>
+</section>
+
+<style>
+	.skill-category {
+		padding: 1rem;
+		border-radius: 0.75rem;
+		background-color: rgb(13 13 13);
+	}
+
+	#icon-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 2.5rem;
+		height: 2.5rem;
+
+		background-color: rgb(from var(--accent-color) r g b / 0.1);
+		border-color: rgb(from var(--accent-color) r g b / 0.5);
+		color: hsl(from var(--accent-color) h s calc(l * 1.2));
+
+		border-width: 1px;
+		border-style: solid;
+
+		border-radius: 0.75rem;
+	}
+
+	#title-container {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+	}
+
+	h2 {
+		margin: 0;
+		color: white;
+	}
+
+	ul {
+		margin: 0rem;
+		margin-top: 1rem;
+		margin-bottom: 0.5rem;
+		padding-left: 1.25rem;
+
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+</style>
