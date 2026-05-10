@@ -4,10 +4,24 @@ import "@/styles/global.css";
 interface Props {
 	href: string;
 	name: string;
-	isCurrent?: boolean;
 }
 
-const { href, name, isCurrent = false } = Astro.props;
+const { href, name } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+function isLinkHighlighted(href: string) {
+	if (currentPath === href) {
+		return true;
+	}
+
+	if (currentPath.includes("work") && href === "/") {
+		return true;
+	}
+
+	return false;
+}
+
+const isCurrent = isLinkHighlighted(href);
 ---
 
 <a href={href} class={isCurrent ? "current-page" : ""}>

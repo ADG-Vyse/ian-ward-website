@@ -5,16 +5,27 @@ import { contactLinks } from "@/data/links";
 ---
 
 <div class="footer-contact-links">
-	{contactLinks.map(({ href, Icon, name }) => <ContactLink href={href} name={name} Icon={Icon} />)}
+	{contactLinks.map(({ href, Icon, name }) =>
+	<ContactLink href={href} name={name} Icon={Icon} />)}
 </div>
 
 <style>
 	.footer-contact-links {
 		display: flex;
 		flex-direction: column;
+		width: fit-content;
 		gap: 0.5rem;
 		user-select: none;
 		justify-content: flex-start;
-		align-items: center;
+		align-items: flex-start;
+	}
+
+	@media (max-width: 750px) {
+		.footer-contact-links {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		}
 	}
 </style>
