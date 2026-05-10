@@ -1,3 +1,7 @@
+import type { IconType } from "react-icons";
+import { FiLayers, FiCode, FiEdit3, FiUsers } from "react-icons/fi";
+import { GrGamepad, GrBug } from "react-icons/gr";
+
 export const expertise = [
   "GAME DESIGNER",
   "LEVEL DESIGNER",
@@ -15,3 +19,43 @@ export const heroHeading = "Crafting Immersive Gaming Experiences";
 
 export const heroDescription =
   "I'm an aspiring game designer currently looking to start my career in the games industry. I have a degree (Hons) Computer Games (Design) (BCGD).";
+
+
+export type SkillCategory = {
+	title: string;
+	items: string[];
+	icon: IconType;
+}
+
+export const skillsAndExpertise: SkillCategory[] = [
+	{
+		title: "Game Design",
+		items: ["Gameplay Mechanics", "Player Progression", "Economy Design", "Combat Systems"],
+		icon: GrGamepad
+	},
+	{
+		title: "Level Design",
+		items: ["Environment Design", "Flow & Pacing", "Puzzle Design", "Blockout"],
+		icon: FiLayers
+	},
+	{
+		title: "Quality Assurance",
+		items: ["Bug Testing", "Balance Testing", "User Testing", "Documentation"],
+		icon: GrBug
+	},
+	{
+		title: "Technical Skills",
+		items: ["Unity", "Unreal Engine", "Git", "Jira"],
+		icon: FiCode
+	},
+	{
+		title: "Creative Skills",
+		items: ["Narrative Design", "World Building", "UI/UX Design", "Prototyping"],
+		icon: FiEdit3
+	},
+	{
+		title: "Collaboration",
+		items: ["Team Leadership", "Cross-functional", "Agile/Scrum", "Communication"],
+		icon: FiUsers
+	}
+]
