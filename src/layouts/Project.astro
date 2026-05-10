@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import "@/styles/global.css";
 import type { Project } from "@/data/projects";
 import Gradient from "@/components/gradient.astro";
+import GalleryDisplay from "@/components/gallery-display.astro";
 import { Image } from "astro:assets";
 
 interface ProjectLayoutProps {
@@ -57,6 +58,14 @@ const details = project.projectPageDetails;
 							</li>
 						))}
 					</ul>
+				</section>
+			)
+		}
+		{
+			details.galleryImages.length > 0 && (
+				<section id="gallery">
+					<h2>Gallery</h2>
+					<GalleryDisplay images={details.galleryImages} columns={details.galleryColumns} />
 				</section>
 			)
 		}

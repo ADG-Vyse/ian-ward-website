@@ -11,7 +11,47 @@ import dustDeparture1 from "@/images/dust-and-departure/dust-and-departure-1.web
 import cavePlatforms from "@/images/shattered-moon/cave-platforms.webp";
 import gravetide2 from "@/images/gravetide/gravetide-2.webp";
 
-// All images for galeries
+// All images for galleries
+// Iskandar
+import iskandarBossRoom from "@/images/iskandar/boss-room.webp";
+import iskandarCampfire from "@/images/iskandar/campfire-camp.webp";
+import iskandarCourtyard from "@/images/iskandar/courtyard-characters.webp";
+import iskandarEnemyCamp from "@/images/iskandar/enemy-camp.webp";
+
+// Equi & Aca
+import equiCaveLava from "@/images/equi-and-aca/cave-lava-platforms.webp";
+import equiLabCrystal from "@/images/equi-and-aca/lab-crystal.webp";
+import equiOutsideFactory from "@/images/equi-and-aca/outside-factory-castle.webp";
+import equiPlaza from "@/images/equi-and-aca/plaza.webp";
+import equiRiver from "@/images/equi-and-aca/river-platforms.webp";
+import equiRobotBoss from "@/images/equi-and-aca/robot-boss.webp";
+import equiRooftops from "@/images/equi-and-aca/rooftops-with-ui.webp";
+
+// Shattered Moon
+import shatteredBridge from "@/images/shattered-moon/bridge.webp";
+import shatteredCastleEntrance from "@/images/shattered-moon/castle-entrance.webp";
+import shatteredCastleFountain from "@/images/shattered-moon/castle-fountain.webp";
+import shatteredCastleUnderFountain from "@/images/shattered-moon/castle-under-fountain.webp";
+import shatteredCave from "@/images/shattered-moon/cave.webp";
+import shatteredCavernRitual from "@/images/shattered-moon/cavern-ritual.webp";
+import shatteredCavernSpikes from "@/images/shattered-moon/cavern-spikes-platform.webp";
+import shatteredSewerClone from "@/images/shattered-moon/sewer-clone-fight.webp";
+import shatteredSewerCog from "@/images/shattered-moon/sewer-cog.webp";
+import shatteredSewerFountain from "@/images/shattered-moon/sewer-fountain.webp";
+import shatteredSewerKnight from "@/images/shattered-moon/sewer-knight-platform.webp";
+import shatteredWaterfallBridge from "@/images/shattered-moon/waterfall-bridge.webp";
+
+// Gravetide
+import gravetide3 from "@/images/gravetide/gravetide-3.webp";
+import gravetide4 from "@/images/gravetide/gravetide-4.webp";
+import gravetide5 from "@/images/gravetide/gravetide-5.webp";
+import gravetide6 from "@/images/gravetide/gravetide-6.webp";
+
+// Dust and Departure
+import dustDeparture2 from "@/images/dust-and-departure/dust-and-departure-2.webp";
+import dustDeparture3 from "@/images/dust-and-departure/dust-and-departure-3.webp";
+import dustDeparture4 from "@/images/dust-and-departure/dust-and-departure-4.webp";
+import dustDeparture5 from "@/images/dust-and-departure/dust-and-departure-5.webp"
 
 export type DocumentationLink = {
   title: string;
@@ -22,7 +62,8 @@ export type ProjectPageDetails = {
 	headerContent: ImageMetadata | string; // Image or youtube trailer link
 	contentParagraphs: string[]; // For each of these, creates a text paragraph
 	documentationLinks?: DocumentationLink[]; // For each of these, creates a link to documentation or devlogs about the project
-	galleryImages?: ImageMetadata[]; // For each of these, creates an image in the gallery section
+	galleryImages: ImageMetadata[]; // For each of these, creates an image in the gallery section
+	galleryColumns: number;
 };
 
 export type Project = {
@@ -64,6 +105,8 @@ export const projects: Project[] = [
           url: "https://docs.google.com/document/d/1W0u0gb8b8QGAgcvr6LyRlYsm0DIEDnF7ao3WVm4Oe3g/edit?tab=t.0",
         },
       ],
+      galleryImages: [iskandarBossRoom, iskandarCampfire, iskandarCourtyard, iskandarEnemyCamp],
+      galleryColumns: 3,
     },
   },
   {
@@ -107,6 +150,8 @@ export const projects: Project[] = [
           url: "https://docs.google.com/document/d/1yNsvAG9wHhX9nsseXrWJJ3I5_xdNrM6UnVVIaSMpXtE/edit?tab=t.0",
         },
       ],
+      galleryImages: [equiCaveLava, equiLabCrystal, equiOutsideFactory, equiPlaza, equiRiver, equiRobotBoss, equiRooftops],
+      galleryColumns: 3,
     },
   },
   {
@@ -128,6 +173,8 @@ export const projects: Project[] = [
 
         "I took inspiration from the Metroidvania games of old and the way they designed their levels to be both challenging as well being able to tell a story just by looking at them. Subtle hints at what might have occurred here in the past and how those incidents shape the current environment.",
       ],
+      galleryImages: [shatteredBridge, shatteredCastleEntrance, shatteredCastleFountain, shatteredCastleUnderFountain, shatteredCave, shatteredCavernRitual, shatteredCavernSpikes, shatteredSewerClone, shatteredSewerCog, shatteredSewerFountain, shatteredSewerKnight, shatteredWaterfallBridge, cavePlatforms],
+      galleryColumns: 3,
     },
   },
   {
@@ -151,6 +198,8 @@ export const projects: Project[] = [
 
         "I let my passion for retro-inspired games shine through in the design choices I made choosing visuals and audio that evoke a sense of nostalgia.",
       ],
+      galleryImages: [gravetide1, gravetide2, gravetide3, gravetide4, gravetide5, gravetide6],
+      galleryColumns: 3,
     },
   },
   {
@@ -170,6 +219,8 @@ export const projects: Project[] = [
 
         "I helped work on the initial GDD and base game mechanics, once that was done I took on a more technical role and worked to implement many of the system the game uses, such as the the safe zones which provided the player a reprieve from the harsh and inhospitable environment that recharges the players oxygen, our oxygen system that showed the impact of prolonged exposure to the player and indicated to them the need to find new safe zones and checkpoint systems allowing the player to respawn back to the most recent safe zone if they become stuck or remain outside for too long and their oxygen depletes to 0.",
       ],
+      galleryImages: [dustDeparture1, dustDeparture2, dustDeparture3, dustDeparture4, dustDeparture5],
+      galleryColumns: 3,
     },
   },
 ];
