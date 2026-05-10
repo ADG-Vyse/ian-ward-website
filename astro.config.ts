@@ -7,4 +7,9 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://ianwardgames.uk/",
   integrations: [react()],
+  vite: {
+    preview: {
+      allowedHosts: ["annex-squander-regretful.ngrok-free.dev"]
+    }
+  }
 });
