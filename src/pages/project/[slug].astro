@@ -5,7 +5,7 @@ import { projects } from "@/data/projects";
 
 export function getStaticPaths() {
 	return projects.map((project) => ({
-		params: { slug: project.projectLink },
+		params: { slug: project.internalProjectLink },
 		props: { project },
 	}));
 }

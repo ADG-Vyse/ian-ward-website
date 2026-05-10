@@ -1,12 +1,12 @@
 ---
 import "@/styles/global.css";
-import ContactLink from "@/components/contact-link.astro";
+import ExternalLink from "@/components/external-link.astro";
 import { contactLinks } from "@/data/links";
 ---
 
 <div class="footer-contact-links">
 	{contactLinks.map(({ href, Icon, name }) =>
-	<ContactLink href={href} name={name} Icon={Icon} />)}
+	<ExternalLink href={href} name={name} Icon={Icon} />)}
 </div>
 
 <style>

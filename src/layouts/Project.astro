@@ -2,9 +2,10 @@
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/global.css";
 import type { Project } from "@/data/projects";
-import Gradient from "@/components/gradient.astro";
 import GalleryDisplay from "@/components/gallery-display.astro";
 import { Image } from "astro:assets";
+import ExternalLink from "@/components/external-link.astro";
+import { FiExternalLink } from "react-icons/fi";
 
 interface ProjectLayoutProps {
 	project: Project;
@@ -48,13 +49,15 @@ const details = project.projectPageDetails;
 		{
 			details.documentationLinks && (
 				<section id="documentation">
-					<h2>Documentation</h2>
+					<h2>Additional Documentation</h2>
 					<ul>
 						{details.documentationLinks.map(link => (
 							<li>
-								<a href={link.url} target="_blank" rel="noopener noreferrer">
-									{link.title}
-								</a>
+								<ExternalLink
+									href={link.url}
+									name={link.title}
+									Icon={FiExternalLink}
+								/>
 							</li>
 						))}
 					</ul>
@@ -70,9 +73,41 @@ const details = project.projectPageDetails;
 			)
 		}
 	</div>
+	<section id="game-link-container">
+		<ExternalLink
+			href={details.projectLink}
+			name={details.projectLinkLabel}
+			Icon={FiExternalLink}
+		/>
+	</section>
+
 </Layout>
 
 <style>
+	h2 {
+		color: white;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+
+		list-style: none;
+		padding-left: 0;
+
+		font-size: 1.25rem;
+	}
+
+	#game-link-container {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		margin-top: 2rem;
+
+		font-size: 1.5rem;
+	}
+
 	#project-header {
 		display: flex;
 		justify-content: space-between;
@@ -93,25 +128,25 @@ const details = project.projectPageDetails;
 		}
 	}
 
-#iframe-container {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-}
+	#iframe-container {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+	}
 
-#iframe-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+	#iframe-container iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
 
-#image-container {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-}
+	#image-container {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+	}
 
-#image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+	#image-container img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 </style>

@@ -64,6 +64,8 @@ export type ProjectPageDetails = {
 	documentationLinks?: DocumentationLink[]; // For each of these, creates a link to documentation or devlogs about the project
 	galleryImages: ImageMetadata[]; // For each of these, creates an image in the gallery section
 	galleryColumns: number;
+	projectLink: string; // External link to the project (itch.io, etc)
+	projectLinkLabel: string; // Label for the project link button
 };
 
 export type Project = {
@@ -73,7 +75,7 @@ export type Project = {
   tags: string[];
   thumbnailImage: ImageMetadata;
   thumbnailAltText: string;
-  projectLink: string;
+  internalProjectLink: string;
 	projectPageDetails: ProjectPageDetails;
 };
 
@@ -87,7 +89,7 @@ export const projects: Project[] = [
     thumbnailImage: iskandarThrone,
     thumbnailAltText:
       "Screenshot of Iskandar The Spear of Truth showing a dimly lit throne room with a menacing skull-adorned throne, red banners, torches, and a caged prisoner on the left.",
-    projectLink: "iskandar-the-spear-of-truth",
+    internalProjectLink: "iskandar-the-spear-of-truth",
     projectPageDetails: {
       headerContent: "https://www.youtube.com/watch?v=vhmx-68ONhk",
       contentParagraphs: [
@@ -107,6 +109,8 @@ export const projects: Project[] = [
       ],
       galleryImages: [iskandarBossRoom, iskandarCampfire, iskandarCourtyard, iskandarEnemyCamp],
       galleryColumns: 2,
+      projectLink: "https://mysteric-studios.itch.io/iskandar-the-spear-of-truth",
+      projectLinkLabel: "Check out the game on itch.io",
     },
   },
   {
@@ -118,7 +122,7 @@ export const projects: Project[] = [
     thumbnailImage: equiWorkshop,
     thumbnailAltText:
       "Screenshot of Equi & Aca showing Aca, a glowing purple cat-like spirit companion, floating in a sci-fi workshop environment.",
-    projectLink: "equi-and-aca",
+    internalProjectLink: "equi-and-aca",
     projectPageDetails: {
       headerContent: "https://www.youtube.com/watch?v=jNjJbW9zKtw",
       contentParagraphs: [
@@ -152,6 +156,8 @@ export const projects: Project[] = [
       ],
       galleryImages: [equiCaveLava, equiLabCrystal, equiOutsideFactory, equiPlaza, equiRiver, equiRobotBoss, equiRooftops],
       galleryColumns: 3,
+      projectLink: "https://lunar-panda-studios.itch.io/equi-and-aca",
+      projectLinkLabel: "Check out the game on itch.io",
     },
   },
   {
@@ -163,7 +169,7 @@ export const projects: Project[] = [
     thumbnailImage: shatteredCastleDog,
     thumbnailAltText:
       "Screenshot of Shattered Moon showing a pixel art character in dark attire facing a large snarling werewolf enemy in a torchlit gothic stone corridor, with health and mana bars visible in the top left.",
-    projectLink: "shattered-moon",
+    internalProjectLink: "shattered-moon",
     projectPageDetails: {
       headerContent: cavePlatforms,
       contentParagraphs: [
@@ -175,6 +181,8 @@ export const projects: Project[] = [
       ],
       galleryImages: [shatteredBridge, shatteredCastleEntrance, shatteredCastleFountain, shatteredCastleUnderFountain, shatteredCave, shatteredCavernRitual, shatteredCavernSpikes, shatteredSewerClone, shatteredSewerCog, shatteredSewerFountain, shatteredSewerKnight, shatteredWaterfallBridge, cavePlatforms],
       galleryColumns: 3,
+      projectLink: "https://holy-sausage-studios.itch.io/shattered-moon",
+      projectLinkLabel: "Check out the game on itch.io",
     },
   },
   {
@@ -186,7 +194,7 @@ export const projects: Project[] = [
     thumbnailImage: gravetide1,
     thumbnailAltText:
       "Screenshot of Gravetide showing a pixel art knight jumping through a vibrant outdoor level with purple stone ruins, green grass, and a misty mountain backdrop, with HUD elements in the top corners.",
-    projectLink: "gravetide",
+    internalProjectLink: "gravetide",
     projectPageDetails: {
       headerContent: gravetide2,
       contentParagraphs: [
@@ -200,6 +208,8 @@ export const projects: Project[] = [
       ],
       galleryImages: [gravetide1, gravetide2, gravetide3, gravetide4, gravetide5, gravetide6],
       galleryColumns: 3,
+      projectLink: "https://thatguyvyse.itch.io/gravetide-beta",
+      projectLinkLabel: "Check out the game on itch.io",
     },
   },
   {
@@ -211,7 +221,7 @@ export const projects: Project[] = [
     thumbnailImage: dustDeparture1,
     thumbnailAltText:
       "Screenshot of Dust and Departure showing a misty alien landscape with tall pine trees, a large planet looming in the sky, and a glass dome object in the foreground.",
-    projectLink: "dust-and-departure",
+    internalProjectLink: "dust-and-departure",
     projectPageDetails: {
       headerContent: dustDeparture1,
       contentParagraphs: [
@@ -221,6 +231,8 @@ export const projects: Project[] = [
       ],
       galleryImages: [dustDeparture1, dustDeparture2, dustDeparture3, dustDeparture4, dustDeparture5],
       galleryColumns: 3,
+      projectLink: "https://globalgamejam.org/games/2025/dust-and-departure-8",
+      projectLinkLabel: "Check out the game on Global Game Jam",
     },
   },
 ];
