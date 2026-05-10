@@ -3,27 +3,63 @@ import "@/styles/global.css";
 import NavLink from "@/components/nav-link.astro";
 import ContactLink from "@/components/contact-link.astro";
 import { navLinks, contactLinks } from "@/data/links";
+
+import { FiMenu } from "react-icons/fi";
 ---
+
 <details>
-	<summary>Hamburger</summary>
-	<div>
+	<summary><FiMenu size={30} /></summary>
+	<div id="hamburger-menu">
 		<div id="nav-links">
-			{navLinks.map(({ href, name }) =>
-				<NavLink href={href} name={name} />)
-				}
+			{navLinks.map(({ href, name }) => <NavLink href={href} name={name} />)}
 		</div>
 		<div id="contact-links">
-			{contactLinks.map(({ href, Icon, name }) =>
-				<ContactLink href={href} name={name} Icon={Icon} />)
-				}
+			{
+				contactLinks.map(({ href, Icon, name }) => (
+					<ContactLink href={href} name={name} Icon={Icon} />
+				))
+			}
 		</div>
 	</div>
 </details>
 
-
 <style>
 	details {
 		display: none;
+		list-style: none;
+	}
+
+	summary {
+		color: white;
+		text-align: right;
+		padding: 0.5rem;
+		width: fit-content;
+		margin-left: auto;
+	}
+
+	details > summary {
+		list-style: none;
+		cursor: pointer;
+	}
+
+	#nav-links,
+	#contact-links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 1rem;
+	}
+
+	#hamburger-menu {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		background-color: var(--bg-color);
+		box-sizing: border-box;
+		width: 100vw;
+		left: 0;
+		margin-top: 1rem;
+		padding: 0 0.5rem;
 	}
 
 	@media (max-width: 750px) {
