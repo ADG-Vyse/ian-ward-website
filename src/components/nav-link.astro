@@ -1,0 +1,32 @@
+---
+import "@/styles/global.css";
+
+interface Props {
+	href: string;
+	name: string;
+	isCurrent?: boolean;
+}
+
+const { href, name, isCurrent = false } = Astro.props;
+---
+
+<a href={href} class={isCurrent ? "current-page" : ""}>
+	{name}
+</a>
+
+<style>
+	a {
+		padding: 0.75rem 0.5rem;
+		color: var(--text-color);
+		transition-duration: 100ms;
+		transition-property: color;
+	}
+
+	a:hover {
+		color: white;
+	}
+
+	.current-page {
+		color: white;
+	}
+</style>

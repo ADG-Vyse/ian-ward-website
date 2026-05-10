@@ -1,8 +1,10 @@
 ---
 import "normalize.css";
 import "@/styles/global.css";
-import NavLinks from "@/components/NavLinks.astro";
-import ContactLinks from "@/components/ContactLinks.astro";
+import HeaderNavLinks from "@/components/header/header-nav-links.astro";
+import FooterNavLinks from "@/components/footer/footer-nav-links.astro";
+import HeaderContactLinks from "@/components/header/header-contact-links.astro";
+import FooterContactLinks from "@/components/footer/footer-contact-links.astro";
 ---
 
 <!doctype html>
@@ -19,8 +21,8 @@ import ContactLinks from "@/components/ContactLinks.astro";
 		<header>
 			<div class="container" id="navbar">
 				<a href="/" id="page-title"><span>Ian Ward</span></a>
-				<NavLinks />
-				<ContactLinks />
+				<HeaderNavLinks />
+				<HeaderContactLinks />
 			</div>
 		</header>
 		<div>
@@ -31,18 +33,15 @@ import ContactLinks from "@/components/ContactLinks.astro";
 			<div class="container footer-content">
 				<div>
 					<span>Ian Ward</span>
-					<p>
-						Game Designer specializing in creating immersive
-						gameplay experiences.
-					</p>
+					<p>Game Designer specializing in creating immersive gameplay experiences.</p>
 				</div>
 				<div>
 					<span>Navigation</span>
-					<NavLinks footer={true} />
+					<FooterNavLinks />
 				</div>
 				<div>
 					<span>Connect</span>
-					<ContactLinks footer={true} />
+					<FooterContactLinks />
 				</div>
 			</div>
 			<span class="container copyright">

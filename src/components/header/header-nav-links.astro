@@ -1,0 +1,42 @@
+---
+import "@/styles/global.css";
+import NavLink from "@/components/nav-link.astro";
+import { navLinks } from "@/data/links";
+
+const currentPath = Astro.url.pathname;
+
+function isLinkHighlighted(href: string) {
+	if (currentPath === href) {
+		return true;
+	}
+
+	if (currentPath.includes("work") && href === "/") {
+		return true;
+	}
+
+	return false;
+}
+---
+
+<nav>
+	{
+		navLinks.map((link) => (
+			<NavLink href={link.href} name={link.name} isCurrent={isLinkHighlighted(link.href)} />
+		))
+	}
+</nav>
+
+<style>
+	nav {
+		display: flex;
+		gap: min(1rem, 1vw);
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	@media (max-width: 750px) {
+		nav {
+			display: none;
+		}
+	}
+</style>

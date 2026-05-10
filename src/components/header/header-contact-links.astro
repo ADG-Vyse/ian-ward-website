@@ -1,0 +1,24 @@
+---
+import "@/styles/global.css";
+import ContactLink from "@/components/contact-link.astro";
+import { contactLinks } from "@/data/links";
+---
+
+<div class="header-contact-links">
+	{contactLinks.map(({ href, Icon, name }) => <ContactLink href={href} name={name} Icon={Icon} />)}
+</div>
+
+<style>
+	.header-contact-links {
+		display: flex;
+		gap: 0.5rem;
+		user-select: none;
+		justify-content: flex-end;
+	}
+
+	@media (max-width: 750px) {
+		.header-contact-links {
+			display: none;
+		}
+	}
+</style>
