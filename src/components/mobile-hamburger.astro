@@ -1,0 +1,34 @@
+---
+import "@/styles/global.css";
+import NavLink from "@/components/nav-link.astro";
+import ContactLink from "@/components/contact-link.astro";
+import { navLinks, contactLinks } from "@/data/links";
+---
+<details>
+	<summary>Hamburger</summary>
+	<div>
+		<div id="nav-links">
+			{navLinks.map(({ href, name }) =>
+				<NavLink href={href} name={name} />)
+				}
+		</div>
+		<div id="contact-links">
+			{contactLinks.map(({ href, Icon, name }) =>
+				<ContactLink href={href} name={name} Icon={Icon} />)
+				}
+		</div>
+	</div>
+</details>
+
+
+<style>
+	details {
+		display: none;
+	}
+
+	@media (max-width: 750px) {
+		details {
+			display: block;
+		}
+	}
+</style>
