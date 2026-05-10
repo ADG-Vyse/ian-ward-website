@@ -5,6 +5,7 @@ import HeaderNavLinks from "@/components/header/header-nav-links.astro";
 import FooterNavLinks from "@/components/footer/footer-nav-links.astro";
 import HeaderContactLinks from "@/components/header/header-contact-links.astro";
 import FooterContactLinks from "@/components/footer/footer-contact-links.astro";
+import MobileHamburger from "@/components/mobile-hamburger.astro";
 ---
 
 <!doctype html>
@@ -23,6 +24,7 @@ import FooterContactLinks from "@/components/footer/footer-contact-links.astro";
 				<a href="/" id="page-title"><span>Ian Ward</span></a>
 				<HeaderNavLinks />
 				<HeaderContactLinks />
+				<MobileHamburger />
 			</div>
 		</header>
 		<div>
@@ -33,7 +35,7 @@ import FooterContactLinks from "@/components/footer/footer-contact-links.astro";
 			<div class="container footer-content">
 				<div>
 					<span>Ian Ward</span>
-					<p>Game Designer specializing in creating immersive gameplay experiences.</p>
+					<p>Game Designer specializing in creating <br/>immersive gameplay experiences.</p>
 				</div>
 				<div>
 					<span>Navigation</span>
@@ -94,7 +96,7 @@ import FooterContactLinks from "@/components/footer/footer-contact-links.astro";
 
 	.footer-content {
 		display: grid;
-		grid-template-columns: 1.5fr 1fr 1fr;
+		grid-template-columns: auto auto auto;
 		padding: 2rem 0;
 		gap: 2rem;
 	}
