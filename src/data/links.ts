@@ -13,7 +13,7 @@ export type ContactLink = {
 };
 
 export const navLinks: NavLink[] = [
-  { name: "Work", href: "/" },
+  { name: "Projects", href: "/" },
   { name: "Game Jams", href: "/game-jams/" },
   { name: "About Me", href: "/about-me/" },
   { name: "Resume", href: "/resume/" },
@@ -21,7 +21,7 @@ export const navLinks: NavLink[] = [
 
 export const contactLinks: ContactLink[] = [
   {
-    name: "Linkedin",
+    name: "LinkedIn",
     href: "https://www.linkedin.com/in/ian-ward-567594177/",
     Icon: FiLinkedin,
   },

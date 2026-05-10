@@ -1,0 +1,39 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/global.css";
+import type { Project } from "@/data/projects";
+
+interface ProjectLayoutProps {
+	project: Project;
+}
+
+const { project } = Astro.props as ProjectLayoutProps;
+---
+
+<Layout>
+	<div class="container">
+		<div id="project-header">
+			<h1>{project.title}</h1>
+			<h2>Role: {project.role}</h2>
+		</div>
+	</div>
+</Layout>
+
+
+<style>
+	#project-header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@media (max-width: 750px) {
+		#project-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		#project-header h1 {
+			margin-bottom: 0;
+		}
+	}
+</style>

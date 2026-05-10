@@ -24,7 +24,7 @@ export const projects: Project[] = [
     tags: ["Tag1", "Tag2"],
     image: iskandarThrone,
     alt: "Screenshot of Iskandar The Spear of Truth showing a dimly lit throne room with a menacing skull-adorned throne, red banners, torches, and a caged prisoner on the left.",
-    link: "/work/iskandar-the-spear-of-truth/",
+    link: "iskandar-the-spear-of-truth",
   },
   {
     title: "Equi & Aca",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     tags: ["Tag1", "Tag2"],
     image: equiWorkshop,
     alt: "Screenshot of Equi & Aca showing Aca, a glowing purple cat-like spirit companion, floating in a sci-fi workshop environment.",
-    link: "/work/equi-and-aca/",
+    link: "equi-and-aca",
   },
   {
     title: "Shattered Moon",
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     tags: ["Tag1", "Tag2"],
     image: shatteredCastleDog,
     alt: "Screenshot of Shattered Moon showing a pixel art character in dark attire facing a large snarling werewolf enemy in a torchlit gothic stone corridor, with health and mana bars visible in the top left.",
-    link: "/work/shattered-moon/",
+    link: "shattered-moon",
   },
   {
     title: "Gravetide",
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     tags: ["Tag1", "Tag2"],
     image: gravetide1,
     alt: "Screenshot of Gravetide showing a pixel art knight jumping through a vibrant outdoor level with purple stone ruins, green grass, and a misty mountain backdrop, with HUD elements in the top corners.",
-    link: "/work/gravetide/",
+    link: "gravetide",
   },
   {
     title: "Dust and Departure",
@@ -64,6 +64,6 @@ export const projects: Project[] = [
     tags: ["Tag1", "Tag2"],
     image: dustDeparture1,
     alt: "Screenshot of Dust and Departure showing a misty alien landscape with tall pine trees, a large planet looming in the sky, and a glass dome object in the foreground.",
-    link: "/work/dust-and-departure/",
+    link: "dust-and-departure",
   },
 ];

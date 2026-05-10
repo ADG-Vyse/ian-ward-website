@@ -1,0 +1,28 @@
+---
+import GalleryImage from "@/components/gallery-image.astro";
+
+interface Props {
+	images: ImageMetadata[];
+	columns?: number;
+}
+
+const { images, columns = 3 } = Astro.props;
+---
+
+<div class="gallery-display" style={`--columns: ${columns}`}>
+	{images.map((image) => <GalleryImage image={image} />)}
+</div>
+
+<style>
+	.gallery-display {
+		display: grid;
+		grid-template-columns: repeat(var(--columns), 1fr);
+		gap: 0.5rem;
+	}
+
+	@media (max-width: 750px) {
+		.gallery-display {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
